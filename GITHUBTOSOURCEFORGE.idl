@@ -1,0 +1,52 @@
+// GITHUBTOSOURCEFORGE.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GITHUBTOSOURCEFORGE.tlb) that will become a resource in
+// GITHUBTOSOURCEFORGE.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(D80DD658-F26B-4949-8641-0DC6EA088360), version(1.0),
+  helpfile("GITHUBTOSOURCEFORGE.hlp"),
+  helpstring("GITHUBTOSOURCEFORGE ActiveX Control module"),
+  control ]
+library GITHUBTOSOURCEFORGELib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGITHUBTOSOURCEFORGECtrl
+
+	[ uuid(74F2D5E0-307D-4CC6-9521-A19D3815EC6C),
+	  helpstring("Dispatch interface for GITHUBTOSOURCEFORGE Control")]
+	dispinterface _DGITHUBTOSOURCEFORGE
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CGITHUBTOSOURCEFORGECtrl
+
+	[ uuid(C31A1E98-B757-4E82-9FF8-099DBADBCBBD),
+	  helpstring("Event interface for GITHUBTOSOURCEFORGE Control") ]
+	dispinterface _DGITHUBTOSOURCEFORGEEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CGITHUBTOSOURCEFORGECtrl
+
+	[ uuid(2369179E-AB7B-4AAE-80CB-150522DD4F5E),
+	  helpstring("GITHUBTOSOURCEFORGE Control"), control ]
+	coclass GITHUBTOSOURCEFORGE
+	{
+		[default] dispinterface _DGITHUBTOSOURCEFORGE;
+		[default, source] dispinterface _DGITHUBTOSOURCEFORGEEvents;
+	};
+
+};
